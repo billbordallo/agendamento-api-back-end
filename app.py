@@ -10,6 +10,8 @@ from logger import logger
 from schemas import *
 from flask_cors import CORS
 
+from clima import clima
+
 info = Info(title="API de agendamento", version="1.0")
 app = OpenAPI(__name__, info=info)
 CORS(app)
@@ -212,3 +214,23 @@ def put_agendamento(query: AgendamentoBuscaSchema, form: AgendamentoAtualizaSche
             return apresenta_agendamento(agendamento), 200
     finally:
         session.close()
+
+@app.get('/clima', tags=[agendamento_tag])
+def get_clima():
+    """Acessa a API OpenWeather para obter informações sobre o clima
+
+    Retorna uma representação do clima para daqui a 24 horas, aproximadamente.
+    """
+    logger.debug(f"Acessando a previsão do tempo ")
+        
+    try:
+        # acessando a API OpenWeather
+        cidade, dia, descricao, temperatura = clima()
+        logger.debug(f"Previsão do tempo: {cidade}, {dia} {descricao}, {temperatura}")
+        # retorna a representação do clima
+        return {"cidade": cidade, "Dia e hora":dia, "previsão": descricao, "temperatura": temperatura}, 200
+    except Exception as e:
+        # caso um erro fora do previsto
+        error_msg = "Não foi possível acessar a previsão do tempo :/"
+        logger.warning(f"Erro ao acessar a previsão do tempo, {error_msg}, {e}")
+        return {"message": error_msg}, 400
