@@ -1,11 +1,10 @@
 import requests
-from datetime import datetime
 
 def clima():
     # link do open_weather: https://openweathermap.org/
 
-    API_KEY = "b8f089bf2fa25263137cadf78d409b41"
-    cidade = "rio de janeiro"
+    API_KEY = "INSERIR_API_KEY_AQUI"
+    cidade = "Rio de Janeiro"
     link = f"https://api.openweathermap.org/data/2.5/forecast?q={cidade}&appid={API_KEY}&lang=pt_br&units=metric"
 
     requisicao = requests.get(link)

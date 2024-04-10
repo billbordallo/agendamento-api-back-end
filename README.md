@@ -9,11 +9,11 @@ Trata-se de um sistema de agendamento de clientes para profissionais liberais. O
 
 Para rodar o sistema completo, é necessário clonar os 4 repositórios, localizados em:
 
-- **Repositório 1** - agendamento-api-front-end-admin: é a interface principal, que será utilizada pelo profissional liberal. Nele, é possível visualizar os agendamentos existentes, confirmar ou não a data, e inserir o compromisso no Google Agenda, através da API do mesmo.
+- **Repositório 1** - [agendamento-api-front-end-admin](https://github.com/billbordallo/agendamento-api-front-end-admin): é a interface principal, que será utilizada pelo profissional liberal. Nele, é possível visualizar os agendamentos existentes, confirmar ou não a data e remover ou adicionar serviços prestados.
 
 - **Repositório 2** - [agendamento-api-back-end-admin](https://github.com/billbordallo/agendamento-api-back-end-admin): contém uma API com o back-end do sistema de administração e se comunica com o Repositório 1. Contém os bancos de dados referentes à autenticação do usuário (profissional liberal) e a tabela de serviços oferecidos.
 
-- **Repositório 3** - agendamento-api-front-end: é a interface pela qual os clientes do profissional liberal poderão realizar agendamentos. O sistema vai informar se o horário desejado está liberado ou não para agendamento.
+- **Repositório 3** - [agendamento-api-front-end](https://github.com/billbordallo/agendamento-api-front-end): é a interface pela qual os clientes do profissional liberal poderão realizar agendamentos. O sistema vai informar se o horário desejado está liberado ou não para agendamento.
 
 - **Repositório 4** (**este repositório**) - agendamento-api-back-end: contém uma API com o back-end do sistema de agendamentos e se comunica com o Repositório 3. Contém o banco de dados com os agendamentos realizados, informações do cliente que realizou o agendamento (nome, telefone, e-mail, endereço, serviço desejado, dia e hora desejados), bem como o status do agendamento.
 
