@@ -3,19 +3,21 @@ _versão: 1.0_
 
 Este repositório contém o microsserviço referente à funcionalidade de agendamento do MVP para a Sprint _Desenvolvimento Back-End Avançado_, da PUC-RIO.
 
-Trata-se de um sistema de agendamento de clientes para profissionais liberais. O sistema completo engloba quatro microsserviços, cada um com seu próprio repositório.
+Trata-se de um sistema de agendamento de clientes para profissionais liberais. O sistema completo engloba quatro microsserviços, cada um com seu próprio repositório, seguindo o esquema apresentado na imagem abaixo:
+
+![Arquitetura Microsserviços MVP](https://tudosobrehospedagemdesites.com.br/img/arquitetura-mvp-02.png)
 
 ## Repositórios necessários para rodar a aplicação
 
-Para rodar o sistema completo, é necessário clonar os 4 repositórios, localizados em:
+Para rodar o sistema completo, é necessário clonar os 4 repositórios:
 
-- **Repositório 1** - [agendamento-api-front-end-admin](https://github.com/billbordallo/agendamento-api-front-end-admin): é a interface principal, que será utilizada pelo profissional liberal. Nele, é possível visualizar os agendamentos existentes, confirmar ou não a data e remover ou adicionar serviços prestados.
+- **Repositório A (este repositório)** - [agendamento-api-back-end](https://github.com/billbordallo/agendamento-api-back-end): é o componente principal, com o back-end do sistema de agendamentos disponibilizado em forma de API Rest. Contém o banco de dados com os agendamentos realizados, informações do cliente que realizou o agendamento (nome, telefone, e-mail, endereço, serviço desejado, dia e hora desejados), bem como o status do agendamento. Se comunica com o Front-end B, para administraçãos dos agendamentos, com o Front-end D, para receber os agendamentos, e com a API externa OpenWheater (E).
 
-- **Repositório 2** - [agendamento-api-back-end-admin](https://github.com/billbordallo/agendamento-api-back-end-admin): contém uma API com o back-end do sistema de administração e se comunica com o Repositório 1. Contém os bancos de dados referentes à autenticação do usuário (profissional liberal) e a tabela de serviços oferecidos.
+- **Repositório B** - [agendamento-api-front-end-admin](https://github.com/billbordallo/agendamento-api-front-end-admin): é a interface que será utilizada pelo profissional liberal. Nele, é possível visualizar os agendamentos existentes, confirmar ou não a data agendada e remover ou adicionar serviços prestados.
 
-- **Repositório 3** - [agendamento-api-front-end](https://github.com/billbordallo/agendamento-api-front-end): é a interface pela qual os clientes do profissional liberal poderão realizar agendamentos. O sistema vai informar se o horário desejado está liberado ou não para agendamento.
+- **Repositório C** - [agendamento-api-back-end-admin](https://github.com/billbordallo/agendamento-api-back-end-admin): é o componente back-end responsável por gerenciar os serviços prestados pelo profissional liberal. Através de uma API Rest, permite listar, adicionar ou remover os serviços oferecidos.
 
-- **Repositório 4** (**este repositório**) - agendamento-api-back-end: contém uma API com o back-end do sistema de agendamentos e se comunica com o Repositório 3. Contém o banco de dados com os agendamentos realizados, informações do cliente que realizou o agendamento (nome, telefone, e-mail, endereço, serviço desejado, dia e hora desejados), bem como o status do agendamento.
+- **Repositório D** - [agendamento-api-front-end](https://github.com/billbordallo/agendamento-api-front-end): é a interface pela qual os clientes do profissional liberal poderão realizar agendamentos. Contém o formulário de agendamento, que permite que o cliente insira seus dados, escolha o serviço desejado e uma data e horário para atendimento.
 
 ## Como instalar e executar este repositório usando o Docker
 
@@ -34,7 +36,7 @@ $ docker build -t agendamento-api-back-end .
 Uma vez criada a imagem, para executar o container basta executar, **como administrador**, seguinte o comando:
 
 ```
-$ docker run -p 5000:5000 agendamento-api-back-end
+$ docker run -d -p 5000:5000 agendamento-api-back-end
 ```
 
 Uma vez executando, para acessar a API, basta abrir o [http://localhost:5000/#/](http://localhost:5000/#/) no navegador.
