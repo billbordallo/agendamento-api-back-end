@@ -25,21 +25,29 @@ Para rodar este repositório usando o Docker (método recomendado), após clonar
 
 1. Certifique-se de ter o [Docker](https://docs.docker.com/engine/install/) instalado e em execução em sua máquina.
 
-2. Navegue até o diretório que contém o `Dockerfile` e o `requirements.txt` no terminal.
+2. Faça o cadastro no site [https://openweathermap.org/](https://openweathermap.org/) e gere uma chave para usar a API de previsão do tempo
 
-3. Execute **como administrador** o seguinte comando para construir a imagem Docker:
+3. Insira a chave de API gerada no OpenWeather no arquivo `clima.py`, na linha 6, entre aspas, conforme o exemplo abaixo:
+
+```
+API_KEY = "INSERIR_API_KEY"
+```
+
+4. Navegue até o diretório que contém o `Dockerfile` e o `requirements.txt` no terminal.
+
+5. Execute **como administrador** o seguinte comando para construir a imagem Docker:
 
 ```
 $ docker build -t agendamento-api-back-end .
 ```
 
-Uma vez criada a imagem, para executar o container basta executar, **como administrador**, seguinte o comando:
+6. Uma vez criada a imagem, para executar o container basta executar, **como administrador**, seguinte o comando:
 
 ```
 $ docker run -d -p 5000:5000 agendamento-api-back-end
 ```
 
-Uma vez executando, para acessar a API, basta abrir o [http://localhost:5000/#/](http://localhost:5000/#/) no navegador.
+7. Uma vez executando, para acessar a API, basta abrir o [http://localhost:5000/#/](http://localhost:5000/#/) no navegador.
 
 ## Como instalar e executar este repositório usando o Flask
 
