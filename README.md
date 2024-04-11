@@ -11,7 +11,7 @@ Trata-se de um sistema de agendamento de clientes para profissionais liberais. O
 
 Para rodar o sistema completo, é necessário clonar os 4 repositórios:
 
-- **Repositório A (este repositório)** - [agendamento-api-back-end](https://github.com/billbordallo/agendamento-api-back-end): é o componente principal, com o back-end do sistema de agendamentos disponibilizado em forma de API Rest. Contém o banco de dados com os agendamentos realizados, informações do cliente que realizou o agendamento (nome, telefone, e-mail, endereço, serviço desejado, dia e hora desejados), bem como o status do agendamento. Se comunica com o Front-end B, para administraçãos dos agendamentos, com o Front-end D, para receber os agendamentos, e com a API externa OpenWheater (E).
+- **Repositório A (este repositório)** - [agendamento-api-back-end](https://github.com/billbordallo/agendamento-api-back-end): é o componente principal, com o back-end do sistema de agendamentos disponibilizado em forma de API Rest. Contém o banco de dados com os agendamentos realizados, informações do cliente que realizou o agendamento (nome, telefone, e-mail, endereço, serviço desejado, dia e hora desejados), bem como o status do agendamento. Se comunica com o Front-end B, para administraçãos dos agendamentos, com o Front-end D, para receber os agendamentos, e com a API externa OpenWeather (E).
 
 - **Repositório B** - [agendamento-api-front-end-admin](https://github.com/billbordallo/agendamento-api-front-end-admin): é a interface que será utilizada pelo profissional liberal. Nele, é possível visualizar os agendamentos existentes, confirmar ou não a data agendada e remover ou adicionar serviços prestados.
 
