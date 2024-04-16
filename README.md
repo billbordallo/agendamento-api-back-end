@@ -32,6 +32,7 @@ Para rodar este repositório usando o Docker (método recomendado), após clonar
 ```
 API_KEY = "INSERIR_API_KEY"
 ```
+> Obs.: a ativação de uma nova chave para a API do OpenWeather leva alguns minutos. Portanto, se você estiver gerando uma chave pela primeira vez, pode ser necessário aguardar alguns minutos até que a mesma fique operante.
 
 4. Navegue até o diretório que contém o `Dockerfile` e o `requirements.txt` no terminal.
 
