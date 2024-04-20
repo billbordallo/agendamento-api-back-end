@@ -1,9 +1,11 @@
 # API do sistema de agendamentos
 _versão: 1.0_
 
-Este repositório contém o microsserviço referente à funcionalidade de agendamento do MVP para a Sprint _Desenvolvimento Back-End Avançado_, da PUC-RIO.
+Este projeto tem como objetivo criar um sistema de agendamento para profissionais liberais que atendem em domicílio. 
 
-Trata-se de um sistema de agendamento de clientes para profissionais liberais. O sistema completo engloba quatro microsserviços, cada um com seu próprio repositório, seguindo o esquema apresentado na imagem abaixo:
+Este repositório contém o microsserviço referente ao back-end de agendamento.
+
+O sistema completo engloba quatro microsserviços, cada um com seu próprio repositório, seguindo o esquema apresentado na imagem abaixo:
 
 ![Arquitetura Microsserviços MVP](https://tudosobrehospedagemdesites.com.br/img/arquitetura-mvp-02.png)
 
@@ -83,4 +85,4 @@ O banco de dados deste repositório utiliza o SQLite e será criado na primeira 
 
 ## Sobre o projeto
 
-Este MVP foi desenvolvido por Fabiano Bordallo como trabalho final para a Sprint "Desenvolvimento Full Stack Avançado", da Pós-Graduação em Desenvolvimento Full Stack, do Departamento de Informática da PUC-Rio.
+Este MVP foi desenvolvido como trabalho final para a Sprint _Desenvolvimento Back-End Avançado_, da **Pós-Graduação em Desenvolvimento Full Stack**, da PUC-RIO.
